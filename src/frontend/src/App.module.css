@@ -3,34 +3,42 @@
     margin: 0;
 }
 .textDiv {
-    height: calc(100% - 2cm - 30px);
-    padding: 10px 10px 20px 10px;
-    gap: 10px;
+    height: calc(100% - 2.5cm);
 }
 
 .textArea {
-    width: calc(100% - 20px);
-    height: 100%;
+    width: calc(100% - 46px);
+    height: calc(100% - 30px);
+    margin: 20px 20px 0px 20px;
     resize: none;
-    border: 1px solid #ccc;
+    border: none;
     border-radius: 4px;
     font-size: 14px;
     font-family: PlemolJP;
 }
 
+.textArea:focus {
+    outline: none;
+}
+
 .buttonArea {
-    height: 2cm;
+    box-shadow: 0px -3px 20px -10px #00000088;
+    height: 2.5cm;
+    width: 100%;
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 20px 1fr 20px 1fr 20px;
+    place-content: center;
 }
 
 .button {
-    background-color: #2196f3; /* 青色 */
+    background-color: #04cbb0;
     color: white;
-    height: 80%;
+    height: 60%;
     width: 100%;
-    padding: 10px 20px;
+    display: grid;
+    place-items: center;
+    margin: auto;
     border: none;
     border-radius: 4px;
     outline: none;
@@ -41,7 +49,7 @@
 }
 
 .button:hover {
-    background-color: #1976d2;
+    background-color: #03aa93;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
