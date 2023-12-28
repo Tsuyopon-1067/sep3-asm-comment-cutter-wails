@@ -4,7 +4,7 @@ import "./App.css";
 import { Delete } from "../wailsjs/go/main/SourceCode";
 
 function App() {
-    const [deletedSourceText, setDeletedSourceText] = useState("s");
+    const [deletedSourceText, setDeletedSourceText] = useState("");
     const [inputSourceText, setInputSourceText] = useState("");
     const updateName = (e: any) => setInputSourceText(e.target.value);
     const updateResultText = (result: string) => {
