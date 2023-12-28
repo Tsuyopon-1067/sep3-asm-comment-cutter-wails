@@ -20,6 +20,14 @@ function App() {
         setDeletedSourceText(event.target.value);
     };
 
+    const handleCopy = async () => {
+        try {
+            await navigator.clipboard.writeText(deletedSourceText);
+        } catch (err) {
+            console.error("クリップボードにコピーできませんでした", err);
+        }
+    };
+
     return (
         <div className={styles.mainDiv}>
             <div className={styles.textDiv}>
@@ -31,9 +39,11 @@ function App() {
             </div>
             <div className={styles.buttonArea}>
                 <button className={styles.button} onClick={deleteComment}>
-                    hogehoge
+                    delete
                 </button>
-                <button className={styles.button}>hogehoge</button>
+                <button className={styles.button} onClick={handleCopy}>
+                    copy
+                </button>
             </div>
         </div>
     );
