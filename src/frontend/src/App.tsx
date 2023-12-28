@@ -6,7 +6,7 @@ import { Delete } from "../wailsjs/go/main/SourceCode";
 function App() {
     const [deletedSourceText, setDeletedSourceText] = useState("");
     const [inputSourceText, setInputSourceText] = useState("");
-    const updateName = (e: any) => setInputSourceText(e.target.value);
+
     const updateResultText = (result: string) => {
         setDeletedSourceText(result);
         setInputSourceText(result);
@@ -26,7 +26,24 @@ function App() {
         } catch (err) {
             console.error("クリップボードにコピーできませんでした", err);
         }
+        setAttentionStyle({
+            transform: "rotateY(0deg)",
+        });
     };
+
+    const onMouseLeave = () => {
+        setAttentionStyle({
+            transform: "rotateY(180deg)",
+        });
+    };
+
+    function sleep(ms: number): Promise<void> {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+    }
+
+    const [attentionStyle, setAttentionStyle] = useState<React.CSSProperties>({
+        transform: "rotateY(180deg)",
+    });
 
     return (
         <div className={styles.mainDiv}>
@@ -38,12 +55,25 @@ function App() {
                 ></textarea>
             </div>
             <div className={styles.buttonArea}>
-                <button className={styles.button} onClick={deleteComment}>
+                <button
+                    className={`${styles.button} ${styles.deleteButton}`}
+                    onClick={deleteComment}
+                >
                     delete
                 </button>
-                <button className={styles.button} onClick={handleCopy}>
+                <button
+                    className={`${styles.button} ${styles.copyButton}`}
+                    onClick={handleCopy}
+                >
                     copy
                 </button>
+                <div
+                    className={styles.clipBoardAttention}
+                    style={attentionStyle}
+                    onMouseLeave={onMouseLeave}
+                >
+                    hogehoge
+                </div>
             </div>
         </div>
     );
