@@ -2,6 +2,9 @@ import { ChangeEvent, useState } from "react";
 import styles from "./App.module.css";
 import "./App.css";
 import { Delete } from "../wailsjs/go/main/SourceCode";
+import DeleteIcon from "./assets/images/deleteIcon.png";
+import CopyIcon from "./assets/images/copyIcon.png";
+import CopyCheckIcon from "./assets/images/copyCheckIcon.png";
 
 function App() {
     const [deletedSourceText, setDeletedSourceText] = useState("");
@@ -59,20 +62,30 @@ function App() {
                     className={`${styles.button} ${styles.deleteButton}`}
                     onClick={deleteComment}
                 >
-                    delete
+                    <div className={styles.buttonText}>
+                        <img className={styles.buttonIcon} src={DeleteIcon} />
+                        delete
+                    </div>
                 </button>
                 <button
                     className={`${styles.button} ${styles.copyButton}`}
                     onClick={handleCopy}
                 >
-                    copy
+                    <div className={styles.buttonText}>
+                        <img className={styles.buttonIcon} src={CopyIcon} />
+                        copy
+                    </div>
                 </button>
                 <div
                     className={styles.clipBoardAttention}
                     style={attentionStyle}
                     onMouseLeave={onMouseLeave}
                 >
-                    hogehoge
+                    <img
+                        className={styles.clipBoardAttentionIcon}
+                        src={CopyCheckIcon}
+                    />
+                    copied!
                 </div>
             </div>
         </div>
