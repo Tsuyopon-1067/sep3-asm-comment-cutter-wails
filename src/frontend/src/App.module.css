@@ -19,11 +19,10 @@
 }
 
 .buttonArea {
-    padding: 0 15px 0 15px;
     height: 2cm;
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: 15px 1fr 15px 1fr 15px;
+    grid-template-columns: 20px 1fr 20px 1fr 20px;
 }
 
 .button {
