@@ -20,6 +20,9 @@
 - Mac
 - Linux
 
+## DownLoad
+https://github.com/Tsuyopon-1067/sep3-asm-comment-cutter-wails/releases/tag/v1.0.0
+
 ## Framework, Language
 - Wails v2.7.1
 - Go v1.21.5
