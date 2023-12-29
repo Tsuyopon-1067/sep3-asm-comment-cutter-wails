@@ -1,0 +1,111 @@
+.mainDiv {
+    height: 100%;
+    margin: 0;
+}
+.textDiv {
+    height: calc(100% - 2.5cm);
+}
+
+.textArea {
+    width: calc(100% - 46px);
+    height: calc(100% - 30px);
+    margin: 20px 20px 0px 20px;
+    resize: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: PlemolJP;
+}
+
+.textArea:focus {
+    outline: none;
+}
+
+.buttonArea {
+    box-shadow: 0px -3px 20px -10px #00000088;
+    height: 2.5cm;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 20px 1fr 20px 1fr 20px;
+    place-content: center;
+}
+
+.button {
+    background-color: #04cbb0;
+    color: white;
+    height: 60%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    margin: auto;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: #03aa93;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.deleteButton {
+    grid-row: 1 / 1;
+    grid-column: 2 / 3;
+}
+
+.copyButton {
+    grid-row: 1 / 1;
+    grid-column: 4 / 5;
+}
+
+.button:active {
+    background-color: #028a77;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.buttonText {
+    height: 36pt;
+    font-size: 20pt;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonIcon {
+    height: 36pt;
+}
+
+.clipBoardAttention {
+    background-color: #000000aa;
+    color: white;
+    font-size: 10pt;
+    height: 1.5em;
+    width: 7em;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.5s ease-out;
+    backface-visibility: hidden;
+    transform: "rotateY(180deg)";
+    grid-row: 1 / 1;
+    grid-column: 4 / 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4pt;
+    position: relative;
+    top: 20%;
+    left: 0px;
+}
+
+.copyButton:hover + .clipBoardAttention {
+    opacity: 1;
+}
+
+.clipBoardAttentionIcon {
+    height: 1.5em;
+}
